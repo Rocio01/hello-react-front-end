@@ -1,9 +1,8 @@
-import React, {useEffect} from 'react';
+import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { fetchGreeting } from '../redux/greetings/greetings';
 
 export default function Greeting() {
-
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(fetchGreeting());
@@ -12,9 +11,12 @@ export default function Greeting() {
   return (
     <div className="card pt-5 mt-5">
       <div className="card-body text-center">
-        <h1>Greeting: {greetingState.title}</h1>
-        <button className="btn btn-primary" onClick={() => window.location.reload()} > Click me! </button>     
-     </div>
-   </div>
+        <h1>
+          Greeting:
+          { greetingState.title}
+        </h1>
+        <button type="button" className="btn btn-primary" onClick={() => window.location.reload()}> Click me! </button>
+      </div>
+    </div>
   );
 }
